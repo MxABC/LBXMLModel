@@ -15,6 +15,6 @@ s.tvos.deployment_target = '9.0'
 
 s.source_files = 'LBXMLModel/*.{h,m}'
 s.public_header_files = 'LBXMLModel/*.{h}'
-s.dependency 'YYCache', '~> 1.0.4'
+s.dependency 'YYModel', '~> 1.0.4'
 end
 

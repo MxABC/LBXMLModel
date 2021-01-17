@@ -162,7 +162,6 @@ xml数据只是标签内容，没有标签属性，那么直接按照YYModel使�
 
 @interface ResModel : NSObject
 @property (nonatomic, assign) NSInteger RESPONSE_CODE;
-@property (nonatomic, assign) double db;
 @property (nonatomic, copy) NSString *RESPONSE_MSG;
 
 //有可能是数组的，均写成数组形式

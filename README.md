@@ -1,6 +1,7 @@
 # LBXMLModel
 xml 与model相互转换，达到类似YYModel使用效果
 
+## 安装
 - pod安装
 
 ```
@@ -10,6 +11,30 @@ pod 'LBXMLModel'
 - 手动安装
 
 将`LBXMLModel`内容copy到工程，另外需要YYModel库
+
+## 调用
+
+包含头文件 `NSObject+LBXMLModel.h`
+
+xml->model
+
+```
+NSString *path = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"xml"];
+NSData *dataXML = [NSData dataWithContentsOfFile:path];
+//xml ->model
+RootModel *model = [RootModel jsonModelWithXML:dataXML];
+```
+
+model->xml
+
+```
+RootModel *rootModel = [[RootModel alloc]init];
+    //TODO:   初始化model值
+NSData *xmlData  = [rootModel jsonModelToXMLData:YES];
+NSString* strXML = [[NSString alloc]initWithData:xmlData encoding:NSUTF8StringEncoding];
+NSLog(@"%@",strXML);
+```
+
 
 # model定义注意事项
 

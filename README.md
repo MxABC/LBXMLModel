@@ -10,7 +10,7 @@ pod 'LBXMLModel'
 
 - 手动安装
 
-将`LBXMLModel`内容copy到工程，另外需要YYModel库
+将`LBXMLModel`文件夹copy到工程，另外需要YYModel库
 
 ## 调用
 
@@ -65,7 +65,6 @@ xml数据只是标签内容，没有标签属性，那么直接按照YYModel使�
 @property (nonatomic, copy) NSString *FILE_NAME;
 @end
 
-
 @interface ResModel : NSObject
 @property (nonatomic, assign) NSInteger RESPONSE_CODE;
 @property (nonatomic, copy) NSString *RESPONSE_MSG;
@@ -77,6 +76,27 @@ xml数据只是标签内容，没有标签属性，那么直接按照YYModel使�
 
 @interface RootModel : NSObject
 @property (nonatomic, strong) ResModel *root;
+@end
+```
+
+```
+@implementation NODEModel
+@end
+
+@implementation ResModel
+
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{@"NODE":[NODEModel class]
+            };
+}
+@end
+
+@implementation RootModel
+
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{@"root" : [ResModel class]
+            };
+}
 @end
 ```
 
@@ -123,7 +143,6 @@ xml数据只是标签内容，没有标签属性，那么直接按照YYModel使�
 //在model->xml时用来判断当前model哪些字段是标签的属性
 @property (nonatomic, strong) NSArray *xml_attribute_set;
 @end
-
 
 @interface NODEModel : NSObject
 @property (nonatomic, copy) NSString *SUBNODE;
@@ -176,7 +195,6 @@ xml数据只是标签内容，没有标签属性，那么直接按照YYModel使�
 }
 @end
 
-
 @implementation TagSubARRAYModel
 - (NSArray*)xml_attribute_set
 {
@@ -192,19 +210,25 @@ xml数据只是标签内容，没有标签属性，那么直接按照YYModel使�
 @end
 
 @implementation ResModel
-
 + (NSDictionary *)modelContainerPropertyGenericClass {
     return @{@"PAGE" : [PAGEModel class],@"NODE":[NODEModel class],@"TagARRAY":[TagARRAYModel class]
             };
 }
 @end
 
-
 @implementation RootModel
-
 + (NSDictionary *)modelContainerPropertyGenericClass {
     return @{@"root" : [ResModel class]
             };
 }
 @end
 ```
+
+# 基于第三方库修改完善
+基于以下2个库进行修改完善后支持YYModel
+
+- [XMLReader](https://github.com/amarcadet/XMLReader)
+- [XMLWriter](https://github.com/ahmyi/XMLWriter)
+
+最终打包与解析使用[YYModel](https://github.com/ibireme/YYModel)
+

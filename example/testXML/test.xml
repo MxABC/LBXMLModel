@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+    <NODE>
+        <SUBNODE>subnode</SUBNODE>
+        <PAGE PAGEID="11-22-33-44-66" FILE_NAME="filename3.jpg"/>
+        <PAGE PAGEID="11-22-33-44-77" FILE_NAME="filename.xml"></PAGE>
+    </NODE>
+    <RESPONSE_MSG>上传成功</RESPONSE_MSG>
+    <RESPONSE_CODE>200</RESPONSE_CODE>
+    <PAGE PAGEID="11-22-33-44" FILE_NAME="filename1.doc"/>
+    <PAGE PAGEID="11-22-33-44-55" FILE_NAME="filename2.pdf"></PAGE>
+    <TITLE>titl1</TITLE>
+    <TITLE>titl2</TITLE>
+    <TagARRAY>
+        <TagSubARRAY subTitle="st1">subArray1</TagSubARRAY>
+    </TagARRAY>
+    <TagARRAY>
+        <TagSubARRAY>subArray3</TagSubARRAY>
+        <TagSubARRAY>subArray4</TagSubARRAY>
+    </TagARRAY>
+</root>

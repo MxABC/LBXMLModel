@@ -1,0 +1,6 @@
+framework module Pods_testXML {
+  umbrella header "Pods-testXML-umbrella.h"
+
+  export *
+  module * { export * }
+}

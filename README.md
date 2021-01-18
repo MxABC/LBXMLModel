@@ -1,8 +1,11 @@
 # LBXMLModel
-xml 与model相互转换，达到类似YYModel使用效果
+xml 与model相互转换，达到类似YYModel使用效果，
+基于以下xml库[XMLReader](https://github.com/amarcadet/XMLReader)和[XMLWriter](https://github.com/ahmyi/XMLWriter)进行修改完善,最后与[YYModel](https://github.com/ibireme/YYModel)搭配使用
+
+
 
 ## 安装
-- pod安装
+- cocoapods安装
 
 ```
 pod 'LBXMLModel'
@@ -127,7 +130,7 @@ xml数据只是标签内容，没有标签属性，那么直接按照YYModel使�
 </root>
 ```
 
-那么model需要增加表明是属性的参数数组 `NSArray *xml_attribute_set`表返回相关属性参数名称
+那么model需要增加表明是属性的参数数组 `NSArray *xml_attribute_set`,改字段返回属性参数名称
 如果包含属性同时还有标签值内容(一般使用不会存在这种情况)，标签内容参数名称定义为`NSString *tag_content_text`
 
 如上面报文对应的model
@@ -153,7 +156,7 @@ xml数据只是标签内容，没有标签属性，那么直接按照YYModel使�
 @interface TagSubARRAYModel : NSObject
 @property (nonatomic, copy) NSString *subTitle;
 @property (nonatomic, copy) NSString *tag_content_text;//标签值，名字固定tag_content_text
-@property (nonatomic, strong) NSArray *xml_attribute_set;
+@property (nonatomic, strong) NSArray *xml_attribute_set;//标签属性名称
 
 @end
 @interface TagARRAYModel : NSObject
@@ -223,11 +226,4 @@ xml数据只是标签内容，没有标签属性，那么直接按照YYModel使�
 @end
 ```
 
-# 基于第三方库修改完善
-基于以下2个库进行修改完善后支持YYModel
-
-- [XMLReader](https://github.com/amarcadet/XMLReader)
-- [XMLWriter](https://github.com/ahmyi/XMLWriter)
-
-最终打包与解析使用[YYModel](https://github.com/ibireme/YYModel)
 

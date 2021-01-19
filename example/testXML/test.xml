@@ -15,6 +15,7 @@
         <TagSubARRAY subTitle="st1">subArray1</TagSubARRAY>
     </TagARRAY>
     <TagARRAY>
+        <TagSubARRAY subTitle="st1">subArray1</TagSubARRAY>
         <TagSubARRAY>subArray3</TagSubARRAY>
         <TagSubARRAY>subArray4</TagSubARRAY>
     </TagARRAY>

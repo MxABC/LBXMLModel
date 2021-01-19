@@ -1,6 +1,6 @@
 # LBXMLModel
 xml 与model相互转换，达到类似YYModel使用效果，
-基于以下xml库[XMLReader](https://github.com/amarcadet/XMLReader)和[XMLWriter](https://github.com/ahmyi/XMLWriter)进行修改完善,最后与[YYModel](https://github.com/ibireme/YYModel)搭配使用
+基于xml库[XMLReader](https://github.com/amarcadet/XMLReader)和[XMLWriter](https://github.com/ahmyi/XMLWriter)修改,最后与[YYModel](https://github.com/ibireme/YYModel)搭配使用
 
 
 
@@ -128,12 +128,30 @@ xml数据只是标签内容，没有标签属性，那么直接按照YYModel使�
         <TagSubARRAY>subArray4</TagSubARRAY>
     </TagARRAY>
 </root>
+
+
+1、如果xml报文只是从服务器接收到用来解析
+
+1)、有标签属性，且没有标签内容(大部分情况都是如此)，如上面的xml报文中的PAGE标签，那么定义Model和json报文定义model没有区别
+
+2)、如果有标签属性且有标签内容，如上图的TagSubARRAY,包含属性 subTitle，且有内容 subArray1，那么model需要定义字段为`NSString *tag_content_text`，也可以通过YYModel提供的mapper方法，修改为名称text
+
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{@"text" : @"tag_content_text",
+             };
+}
+
+2、如果jsonmodel需要打包成xml
+1)、有标签属性，且没有标签内容(大部分情况都是如此)，如上面的xml报文中的PAGE标签，定义Model安装普通model定义外，需要额外增加`NSArray *xml_attribute_set`，并返回对应属性的名字数组
+
+2)、有标签属性，且包含标签内容  如上面xml的TagSubARRAY,包含属性 subTitle，且有内容 subArray1
+需要额外增加`NSArray *xml_attribute_set`，并返回对应属性的名字数组 ，可参考下面的model定义
+标签内容参数名称定义为`NSString *tag_content_text`，且不可修改
 ```
 
-那么model需要增加表明是属性的参数数组 `NSArray *xml_attribute_set`,改字段返回属性参数名称
-如果包含属性同时还有标签值内容(一般使用不会存在这种情况)，标签内容参数名称定义为`NSString *tag_content_text`
 
-如上面报文对应的model
+
+如上面报文对应的model(用来model->xml，如果只是xml->model xml_attribute_set不需要定义)
 
 
 ```

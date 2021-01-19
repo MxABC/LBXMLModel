@@ -25,9 +25,9 @@
 - (IBAction)testXML:(id)sender {
     
 //    [self xmlParser];
-    [self xmlWriter];
+//    [self xmlWriter];
 //
-//    [self testXml];
+    [self testXml];
 }
 
 

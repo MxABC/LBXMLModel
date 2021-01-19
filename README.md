@@ -132,9 +132,12 @@ xml数据只是标签内容，没有标签属性，那么直接按照YYModel使�
 
 1、如果xml报文只是从服务器接收到用来解析(xml->jsonmodel)
 
-1)、有标签属性，且没有标签内容(大部分情况都是如此)，如上面的xml报文中的PAGE标签，那么定义Model和json报文定义model没有区别
+1)、有标签属性，且没有标签内容(大部分情况都是如此)，如上面的xml报文中的PAGE标签，那么定义  
+Model和json报文定义model没有区别
 
-2)、如果有标签属性且有标签内容，如上图的TagSubARRAY,包含属性 subTitle，且有内容 subArray1，那么model需要定义字段为`NSString *tag_content_text`来表示标签内容，也可以通过YYModel提供的mapper方法自定义名称，如下面方法修改为名称text
+2)、如果有标签属性且有标签内容，如上图的TagSubARRAY,包含属性 subTitle，且有内容   
+  subArray1，那么model需要定义字段为`NSString *tag_content_text`来表示标签内容，  
+  也可以通过YYModel提供的mapper方法自定义名称，如下面方法修改为名称text
 
 + (NSDictionary *)modelCustomPropertyMapper {
     return @{@"text" : @"tag_content_text",
@@ -142,15 +145,18 @@ xml数据只是标签内容，没有标签属性，那么直接按照YYModel使�
 }
 
 2、如果jsonmodel需要打包成xml数据(jsonmodel->json)
-1)、有标签属性，且没有标签内容(大部分情况都是如此)，如上面的xml报文中的PAGE标签，定义Model安装普通model定义外，model需要定义类方法,返回对应的属性字段
+1)、有标签属性，且没有标签内容(大部分情况都是如此)，如上面的xml报文中的PAGE标签，定义Model  
+安装普通model定义外，model需要定义类方法,返回对应的属性字段
 + (NSArray*)modelContainerAttributePropertys
 {
     return @[@"subTitle"];
 }
 
-2)、有标签属性，且包含标签内容  如上面xml的TagSubARRAY,包含属性 subTitle，且有内容 subArray1
-需要额外增加`NSArray *xml_attribute_set`，并返回对应属性的名字数组 ，可参考下面的model定义
-标签内容参数名称定义为`NSString *tag_content_text`来表示标签内容，也可以通过YYModel提供的mapper方法自定义名称，如下面方法修改为名称text
+2)、有标签属性，且包含标签内容  如上面xml的TagSubARRAY,包含属性 subTitle，且有内容   
+subArray1需要额外增加`NSArray *xml_attribute_set`，并返回对应属性的名字数组 ，可  
+参考下面的model定义
+标签内容参数名称定义为`NSString *tag_content_text`来表示标签内容，也可以通过YYModel  
+提供的mapper方法自定义名称，如下面方法修改为名称text
 
 + (NSDictionary *)modelCustomPropertyMapper {
     return @{@"text" : @"tag_content_text",

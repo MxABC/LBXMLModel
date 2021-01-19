@@ -12,11 +12,11 @@
     <TITLE>titl1</TITLE>
     <TITLE>titl2</TITLE>
     <TagARRAY>
-        <TagSubARRAY subTitle="st1">subArray1</TagSubARRAY>
+        <TagSubARRAY subTitle="st1"></TagSubARRAY>
     </TagARRAY>
     <TagARRAY>
         <TagSubARRAY subTitle="st1">subArray1</TagSubARRAY>
-        <TagSubARRAY>subArray3</TagSubARRAY>
-        <TagSubARRAY>subArray4</TagSubARRAY>
+        <TagSubARRAY subTitle="st2"></TagSubARRAY>
+        <TagSubARRAY subTitle="st1">subArray4</TagSubARRAY>
     </TagARRAY>
 </root>

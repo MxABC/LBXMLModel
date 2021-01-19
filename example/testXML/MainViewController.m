@@ -104,8 +104,9 @@
     NSString *path = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"xml"];
     //从xml读取数据
     NSData *dataXML = [NSData dataWithContentsOfFile:path];
-        
-//    RootModel *model = [RootModel xml_modelWithJSON:dataXML];
+
+    NSString *str = [[NSString alloc]initWithData:dataXML encoding:NSUTF8StringEncoding];
+    NSLog(@"%@",str);
     
     NSLog(@"start");
     RootModel *model = [RootModel jsonModelWithXML:dataXML];

@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-testXML/Pods-testXML-frameworks.sh
+${BUILT_PRODUCTS_DIR}/LBXMLModel/LBXMLModel.framework
 ${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework

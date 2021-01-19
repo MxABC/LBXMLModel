@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		73411A2825B1D67F009202F1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73411A2625B1D67F009202F1 /* MainViewController.m */; };
 		73411A2925B1D67F009202F1 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73411A2725B1D67F009202F1 /* MainViewController.xib */; };
-		73411A7325B1D887009202F1 /* XMLWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 73411A6B25B1D887009202F1 /* XMLWriter.m */; };
-		73411A7525B1D887009202F1 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 73411A7125B1D887009202F1 /* XMLReader.m */; };
-		73A858F625B2EFD1003FC192 /* NSObject+LBXMLModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A858F525B2EFD1003FC192 /* NSObject+LBXMLModel.m */; };
 		8D75A7E425B01F830055FC3B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D75A7E325B01F830055FC3B /* AppDelegate.m */; };
 		8D75A7EF25B01F850055FC3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D75A7EE25B01F850055FC3B /* Assets.xcassets */; };
 		8D75A7F225B01F850055FC3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D75A7F025B01F850055FC3B /* LaunchScreen.storyboard */; };
@@ -28,12 +25,6 @@
 		73411A2525B1D67F009202F1 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		73411A2625B1D67F009202F1 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		73411A2725B1D67F009202F1 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
-		73411A6B25B1D887009202F1 /* XMLWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLWriter.m; sourceTree = "<group>"; };
-		73411A6D25B1D887009202F1 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
-		73411A6F25B1D887009202F1 /* XMLWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLWriter.h; sourceTree = "<group>"; };
-		73411A7125B1D887009202F1 /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
-		73A858F425B2EFD1003FC192 /* NSObject+LBXMLModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+LBXMLModel.h"; sourceTree = "<group>"; };
-		73A858F525B2EFD1003FC192 /* NSObject+LBXMLModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LBXMLModel.m"; sourceTree = "<group>"; };
 		8D75A7DF25B01F830055FC3B /* testXML.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testXML.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D75A7E225B01F830055FC3B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8D75A7E325B01F830055FC3B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -58,24 +49,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		73411A6925B1D887009202F1 /* LBXMLModel */ = {
-			isa = PBXGroup;
-			children = (
-				73411A6D25B1D887009202F1 /* XMLReader.h */,
-				73411A7125B1D887009202F1 /* XMLReader.m */,
-				73411A6F25B1D887009202F1 /* XMLWriter.h */,
-				73411A6B25B1D887009202F1 /* XMLWriter.m */,
-				73A858F425B2EFD1003FC192 /* NSObject+LBXMLModel.h */,
-				73A858F525B2EFD1003FC192 /* NSObject+LBXMLModel.m */,
-			);
-			name = LBXMLModel;
-			path = ../LBXMLModel;
-			sourceTree = "<group>";
-		};
 		8D75A7D625B01F820055FC3B = {
 			isa = PBXGroup;
 			children = (
-				73411A6925B1D887009202F1 /* LBXMLModel */,
 				8D75A7E125B01F830055FC3B /* testXML */,
 				8D75A7E025B01F830055FC3B /* Products */,
 				9575958F097620FA37BD40F7 /* Pods */,
@@ -241,9 +217,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73411A7325B1D887009202F1 /* XMLWriter.m in Sources */,
-				73A858F625B2EFD1003FC192 /* NSObject+LBXMLModel.m in Sources */,
-				73411A7525B1D887009202F1 /* XMLReader.m in Sources */,
 				73411A2825B1D67F009202F1 /* MainViewController.m in Sources */,
 				8D75A7E425B01F830055FC3B /* AppDelegate.m in Sources */,
 				8D8CF91625B117B40012BAF9 /* ResModel.m in Sources */,

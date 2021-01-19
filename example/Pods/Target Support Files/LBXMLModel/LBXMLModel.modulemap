@@ -1,0 +1,6 @@
+framework module LBXMLModel {
+  umbrella header "LBXMLModel-umbrella.h"
+
+  export *
+  module * { export * }
+}

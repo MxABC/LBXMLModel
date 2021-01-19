@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name         = 'LBXMLModel'
-s.version      = '1.0'
+s.version      = '1.1'
 s.summary      = 'iOS xml jsonmodel'
 s.homepage     = 'https://github.com/MxABC/LBXMLModel'
 s.license      = 'MIT'
@@ -13,6 +13,5 @@ s.osx.deployment_target = '10.7'
 
 s.source_files = 'LBXMLModel/*.{h,m}'
 s.public_header_files = 'LBXMLModel/*.{h}'
-s.dependency 'YYModel', '~> 1.0.4'
 end
 

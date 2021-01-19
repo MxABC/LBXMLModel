@@ -15,6 +15,7 @@
     NSString* passDict;
     BOOL withHeader;
     BOOL hasRoot;
+//    Class modelcls;
 }
 +(NSData *)XMLDataFromDictionary:(NSDictionary *)dictionary; //New
 +(NSData *)XMLDataFromDictionary:(NSDictionary *)dictionary withHeader:(BOOL)header; //New

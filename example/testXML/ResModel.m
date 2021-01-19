@@ -9,7 +9,7 @@
 
 @implementation PAGEModel
 
-- (NSArray*)xml_attribute_set
++ (NSArray*)modelContainerAttributePropertys
 {
     return @[@"PAGEID",@"FILE_NAME"];
 }
@@ -25,9 +25,16 @@
 
 
 @implementation TagSubARRAYModel
-- (NSArray*)xml_attribute_set
+
+
++ (NSArray*)modelContainerAttributePropertys
 {
     return @[@"subTitle"];
+}
+
+//标签内容 字段为tag_content_text，如果想其他名称，这里mapper
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{@"text" : @"tag_content_text"};
 }
 
 @end
@@ -56,5 +63,4 @@
 }
 
 @end
-
 

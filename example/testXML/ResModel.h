@@ -10,10 +10,6 @@
 @interface PAGEModel : NSObject
 @property (nonatomic, copy) NSString *PAGEID;
 @property (nonatomic, copy) NSString *FILE_NAME;
-
-//当前对象 哪些字段是xml标签的属性,如果没有属性字段则不需要改字段
-//在model->xml时用来判断当前model哪些字段是标签的属性
-@property (nonatomic, strong) NSArray *xml_attribute_set;
 @end
 
 
@@ -25,8 +21,8 @@
 
 @interface TagSubARRAYModel : NSObject
 @property (nonatomic, copy) NSString *subTitle;
-@property (nonatomic, copy) NSString *tag_content_text;//标签值
-@property (nonatomic, strong) NSArray *xml_attribute_set;
+@property (nonatomic, copy) NSString *text;//标签值
+
 
 @end
 @interface TagARRAYModel : NSObject

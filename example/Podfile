@@ -6,6 +6,7 @@ target 'testXML' do
   use_frameworks!
 
   # Pods for testXML
-pod 'YYModel'
+#pod 'YYModel'
+pod 'LBXMLModel',path:'../'
 
 end

@@ -47,7 +47,7 @@ NSString *const kXMLReaderAttributePrefix	= @"@";
 
             NSString* text = dic[kXMLReaderTextNodeKey];
 
-            if (allkeys.count >1 && text.length <= 1 ) {
+            if (allkeys.count >1 && text && text.length <= 1 ) {
 
                 [dic removeObjectForKey:kXMLReaderTextNodeKey];
             }
@@ -72,7 +72,7 @@ NSString *const kXMLReaderAttributePrefix	= @"@";
             else
             {
                 NSString* text = tmp[kXMLReaderTextNodeKey];
-                if (text || text.length <= 0) {
+                if (text && text.length <= 0) {
                     [tmp removeObjectForKey:kXMLReaderTextNodeKey];
                 }
                 
@@ -86,10 +86,8 @@ NSString *const kXMLReaderAttributePrefix	= @"@";
             for (int i = 0; i < array.count; i++) {
                 
                 id obj = array[i];
-           
              
                 if ( [obj isKindOfClass:[NSMutableDictionary class]] ) {
-                    
                     
                     NSMutableDictionary *oneDic = (NSMutableDictionary*)obj;
                     if ([oneDic allKeys].count == 1 && [[oneDic allKeys][0] isEqualToString:kXMLReaderTextNodeKey] ) {
@@ -104,7 +102,7 @@ NSString *const kXMLReaderAttributePrefix	= @"@";
                 }
                 else if ([obj isKindOfClass:[NSMutableArray class]])
                 {
-                    NSLog(@"");
+//                    NSLog(@"never happen");
 
                 }
             }
@@ -128,7 +126,7 @@ NSString *const kXMLReaderAttributePrefix	= @"@";
     [self deleteTagText:muDic];
     
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:muDic
-                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
+                                                       options:0 // Pass 0 if you don't care about the readability of the generated string
                                                          error:error];
     
     return jsonData;
@@ -142,7 +140,7 @@ NSString *const kXMLReaderAttributePrefix	= @"@";
     [self deleteTagText:muDic];
     
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:muDic
-                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
+                                                       options:0 // Pass 0 if you don't care about the readability of the generated string
                                                          error:error];
     
     return jsonData;
@@ -213,16 +211,6 @@ NSString *const kXMLReaderAttributePrefix	= @"@";
     return nil;
 }
 
-- (NSDictionary*)parser:(NSDictionary*)dic
-{
-    //https://stackoverflow.com/questions/15498989/xml-into-json-conversion-in-ios/15499189
-    NSError *error;
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic
-                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
-                                                         error:&error];
-    
-    return nil;
-}
 
 
 #pragma mark -  NSXMLParserDelegate methods

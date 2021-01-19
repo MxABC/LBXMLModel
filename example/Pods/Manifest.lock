@@ -1,16 +1,23 @@
 PODS:
+  - LBXMLModel (1.0):
+    - YYModel (~> 1.0.4)
   - YYModel (1.0.4)
 
 DEPENDENCIES:
-  - YYModel
+  - LBXMLModel (from `../`)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - YYModel
 
+EXTERNAL SOURCES:
+  LBXMLModel:
+    :path: "../"
+
 SPEC CHECKSUMS:
+  LBXMLModel: ce0ad08745c962531676230b8803996eb25b9162
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 3ea3d3886e953423c408d120396961dd7d2b7a32
+PODFILE CHECKSUM: af3b0ceefbba541be000866c9e390d7f05ae40b3
 
 COCOAPODS: 1.9.3

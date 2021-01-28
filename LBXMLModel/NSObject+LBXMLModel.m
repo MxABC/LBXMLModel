@@ -1853,7 +1853,7 @@ static NSString *ModelDescription(NSObject *model) {
             continue;
         }
         
-        NSLog(@"value:%@",value);
+//        NSLog(@"value:%@",value);
         
 
         if ([value isKindOfClass:[NSDictionary class]] && ![value isKindOfClass:[NSMutableDictionary class]] ) {
@@ -2042,7 +2042,7 @@ static NSString *ModelDescription(NSObject *model) {
             continue;
         }
         
-        NSLog(@"value:%@",value);
+//        NSLog(@"value:%@",value);
         
 
         if ([value isKindOfClass:[NSDictionary class]] && ![value isKindOfClass:[NSMutableDictionary class]] ) {

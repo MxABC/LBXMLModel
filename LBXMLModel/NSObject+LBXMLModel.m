@@ -1282,7 +1282,7 @@ static id ModelToJSONObjectRecursive(NSObject *model) {
         if (!suc) return nil;
     }
     
-    //添加 属性字段数组
+    //xml添加 属性字段数组
     Class cls = [model class];
     // 判断model是否存在标签属性,存在需要添加一个属性名称数组，转换字典后，XMLWriter内会根据这个数组写XML属性
     NSArray *attributePropertys = nil;
@@ -1871,7 +1871,7 @@ static NSString *ModelDescription(NSObject *model) {
         }
         if (meta->_nsType && (meta->_nsType == XMLEncodingTypeNSArray || meta->_nsType == XMLEncodingTypeNSMutableArray )) {
             
-            //判断字典对应字段非数组,则将字典内容转换为数组
+            //字典对应字段非数组,但是原型是数组形式,则将字典内容转换为数组
             if ( value && !([value isKindOfClass:[NSArray class]] || [value isKindOfClass:[NSMutableArray class]]) )
             {
                 NSMutableArray *array = [NSMutableArray arrayWithObject:value];
@@ -1890,7 +1890,7 @@ static NSString *ModelDescription(NSObject *model) {
         }
         else if ([value isKindOfClass:[NSDictionary class]] && meta->_genericCls)
         {
-            //对数据进行修改以支持model模型
+            //DEPRECATED 对数据进行修改以支持model模型(当前代码不会执行，只是保留,对NSDictionary和数组处理有其他代码处理了)
             Class itemModelClass = meta->_genericCls;
             if (itemModelClass) {
                 
@@ -1981,6 +1981,10 @@ static NSString *ModelDescription(NSObject *model) {
         }
     }
 }
+
+#pragma mark-
+#pragma mark-  DEPRECATED code
+#pragma mark-
 
 + (void)propertyWithArray:(NSMutableArray*)array cls:(Class)cls
 {
